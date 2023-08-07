@@ -28,9 +28,10 @@ altura_local = float(input("Digite um valor para a Altura Local: "))
 base_piso = float(input("Digite um valor para a Base do piso: "))
 altura_piso = float(input("Digite um valor para a Altura do rodapé: "))
 
+retangulo_local = Retangulo(base_local, altura_local)
+area_local = base_local * altura_local
 
 
-retangulo1 = Retangulo(base1, altura1)
 
 print ("O Lado do retângulo é:", retangulo1.mostraLado())
 print (retangulo1.trocaLado())
