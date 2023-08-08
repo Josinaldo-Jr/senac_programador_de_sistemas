@@ -4,7 +4,7 @@ Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
 Métodos: Mudar valor dos lados, Retornar valor dos lados, calcular Área e calcular Perímetro;
 Crie um programa que utilize esta classe. Ele deve pedir ao usuário que informe as medidades de um local. Depois, deve criar um objeto com as medidas e calcular a quantidade de pisos e de rodapés necessárias para o local.'''
 
-class Retangulo(object): 
+'''class Retangulo(object): 
     def __init__(self, base, altura):
         self.base = base 
         self.altura = altura    
@@ -28,11 +28,5 @@ altura_local = float(input("Digite um valor para a Altura Local: "))
 base_piso = float(input("Digite um valor para a Base do piso: "))
 altura_piso = float(input("Digite um valor para a Altura do rodapé: "))
 
-retangulo_local = Retangulo(base_local, altura_local)
-area_local = base_local * altura_local
-
-
-
-print ("O Lado do retângulo é:", retangulo1.mostraLado())
-print (retangulo1.trocaLado())
-print ("A Área do quadro é:", retangulo1.mostraArea())
+retangulo_local = Retangulo(base_local, altura_local)'''
+# area_local = base_local * altura_local'''

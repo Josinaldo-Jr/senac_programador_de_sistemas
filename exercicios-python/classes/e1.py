@@ -15,7 +15,7 @@ class Bola(object):
     def mostraCor(self):
         return "A bola está com a cor {}...".format(self.cor)
     
-bola = Bola("laranja", "20cm", "borracha")  
+bola = Bola("vermelho", "20cm", "borracha")  
 print (bola.mostraCor())  
 
 
