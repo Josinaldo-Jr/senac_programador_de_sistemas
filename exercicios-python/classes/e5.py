@@ -7,10 +7,7 @@ class ContaCorrete(object):
         self.saldo = saldo   
    
     def alterarNome(self, nome):
-        nome = str(input("Para qual nome você quer alterar? "))
         self.nome = nome
-
-        # return "{} agora tem {} anos...".format(self.nome, self.idade)  
 
     def deposito(self, valor):
         if valor > 0:
@@ -27,21 +24,18 @@ class ContaCorrete(object):
             self.saldo -= valor    
    
     def informacoes(self):
-        print(f"Número da conta corrente: {self.nome}".format(self.nome))
-        print(f"Nome do correntista: {self.idade} anos".format(self.idade))
-        print(f"Saldo da conta: {self.peso} kg".format(self.peso))
+        print(f"Número da conta corrente: {self.numero}".format(self.numero))
+        print(f"Nome do correntista: {self.nome}".format(self.nome))
+        print(f"Saldo da conta: R$ {self.saldo}".format(self.saldo))
 
-'''nome = str(input("Digite um nome: "))
-idade = int(input("Digite uma idade: "))
-peso = float(input("Digite um peso: "))
-altura = float(input("Digite uma altura: "))
 
-pessoa0 = Pessoa(nome, idade, peso, altura)'''
 
 conta1 = ContaCorrete(123456, "João", 150)
 conta2 = ContaCorrete(654321, "Maria", 300)
 
 print ('----------------------')
-pessoa1.envelhecer(), pessoa1.engordar(), pessoa1.crescer(), pessoa1.emagrecer()
+conta1.alterarNome("Afonso")
+conta1.deposito(150)
+conta1.saque(50)
 print ('----------------------')
-pessoa1.informacoes()
+conta1.informacoes()
