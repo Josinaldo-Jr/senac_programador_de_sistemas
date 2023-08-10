@@ -1,59 +1,95 @@
-'''Classe Pessoa: Crie uma classe que modele uma pessoa:
+'''Classe Escola: Crie uma classe que modele uma escola:
 
-Atributos: nome, idade, peso e altura
-Métodos: Envelhercer, engordar, emagrecer, crescer. Obs: Por padrão, a cada ano que nossa pessoa envelhece, sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm.'''
+Métodos: cadastrar, editar, listar e deletar.
+Limite de 10 alunos'''
 
 class Escola(object): 
-    def __init__(self, alunos, vagas):
-        self.alunos = alunos  
-        self.vagas = vagas 
-      
+    def __init__(self):
+        self.alunos = [] 
+        self.vagas = 0
    
-    def cadastrar(self, cadastro):
-        if self.vagas < 10:
-            cadastro = str(input("digite o nome do aluno para cadastrar? "))
-            self.vagas += 1
+    def cadastrar(self):
+        if self.vagas < 2:
+            self.alunos.append(str(input("Digite o nome do aluno para cadastrar: ")))
+            self.vagas += 1   
+            print("Aluno cadastrado com sucesso.")   
 
-        self.idade += anos
-        if (self.idade < 21):
-            self.altura += (anos * 0.5)
+        else:
+            print("Sem vagas no sistema.") 
 
-        # return "{} agora tem {} anos...".format(self.nome, self.idade)  
-             
+    def editar(self, nome_antigo, nome_novo):
+        if nome_antigo in self.alunos:
+            indice_aluno = self.alunos.index(nome_antigo)
+            self.alunos[indice_aluno] = nome_novo
+            print(f"O aluno '{nome_antigo}' foi alterado para '{nome_novo}' com sucesso.")
+        else:
+            print(f"O nome '{nome_antigo}' não foi encontrado.")
 
-    def engordar(self):
-        mais_peso = float(input("Quantos kg a pessoa ganhou? "))
-        self.peso += mais_peso
-        # return "{} agora pesa {} kg...".format(self.nome, self.peso)  
+    def excluir(self, nome_del):
+        if nome_del in self.alunos:
+            self.alunos.remove(nome_del)
+            print(f"O aluno '{nome_del}' foi excluído com sucesso.")
+        else:
+            print(f"O aluno '{nome_del}' não foi encontrado.")
+
+
+    def mostrar(self):
+                
+
+
+            
+
+
+
+
+
+
+                  
+
     
-    def emagrecer(self):
-        menos_peso = float(input("Quantos kg a pessoa perdeu? "))
-        self.peso += menos_peso
-        # return "{} agora pesa {} kg...".format(self.nome, self.peso)  
-    
-    def crescer(self):
-        mais_altura = float(input("Quantos cm a pessoa ganhou? "))
-        self.altura += mais_altura
-        # return "{} agora mede {} cm...".format(self.nome, self.altura)  
 
-    def informacoes(self):
-        print(f"Nome: {self.nome}".format(self.nome))
-        print(f"Idade atual: {self.idade} anos".format(self.idade))
-        print(f"Peso atual: {self.peso} kg".format(self.peso))
-        print(f"Altura atual: {self.altura} cm".format(self.altura))    
-    
+escola = Escola()
 
-'''nome = str(input("Digite um nome: "))
-idade = int(input("Digite uma idade: "))
-peso = float(input("Digite um peso: "))
-altura = float(input("Digite uma altura: "))
+# menu = -1
+# while != 0:
+while True:
+    print("------\nSistema Escolar:\n------")
+    print("1-Cadastrar aluno\n2-Editar aluno\n3-Excluir aluno\n4-Mostrar alunos\n0-Sair")
+    print("------")
 
-pessoa0 = Pessoa(nome, idade, peso, altura)'''
+    menu = int(input("Escolha uma opção: "))
 
-pessoa1 = Pessoa('Maria', 18, 50, 160)
-pessoa2 = Pessoa('José', 21, 58, 175)
+    if menu == 0:
+        print("------\nSistema Encerrado.\n------")
 
-print ('----------------------')
-pessoa1.envelhecer(), pessoa1.engordar(), pessoa1.crescer(), pessoa1.emagrecer()
-print ('----------------------')
-pessoa1.informacoes()
+        break
+
+    elif menu == 1:
+         print("------\nCadastrar Aluno: ")
+         escola.cadastrar()         
+
+    elif menu == 2:
+         print("------\nEditar Aluno:\n------")  
+
+         nome_antigo = str(input("Digite o nome do aluno que você quer alterar: "))
+         nome_novo = str(input("Digite o novo nome: "))         
+
+         escola.editar(nome_antigo, nome_novo)
+
+    elif menu == 3:
+         print("------\nExcluir Aluno:\n------")
+
+         nome_del = str(input("Digite o nome do aluno que você quer excluir: "))
+         escola.excluir(nome_del)
+
+    elif menu == 4:
+         print("------\nMostrar Alunos:\n------")   
+
+    else:
+        print("------\nOpção inválida.")        
+
+          
+
+
+
+        
